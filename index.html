@@ -1,103 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warhammer 40k Archive</title>
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --card: #1a1a1a;
-            --accent: #c62828;
-            --text: #e0e0e0;
-            --text-light: #aaaaaa;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-            border-bottom: 2px solid var(--accent);
-        }
-        header h1 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            color: #c62828;
-            text-shadow: 0 0 20px #c62828;
-        }
-        nav {
-            background-color: rgba(26, 26, 26, 0.98);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--accent);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active { color: var(--accent); }
-        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
-        .section {
-            background-color: var(--card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            border: 1px solid rgba(198, 40, 40, 0.2);
-        }
-        details {
-            margin: 1rem 0;
-            background: #111;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--accent);
-        }
-        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warhammer 40k Archive</title>
+
+<style>
+:root {
+    --bg: #0a0a0a;
+    --card: #1a1a1a;
+    --accent: #c62828;
+    --text: #e0e0e0;
+    --text-light: #aaaaaa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(198,40,40,0.7);
+}
+
+/* NAV */
+nav {
+    background-color: rgba(26, 26, 26, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: radial-gradient(circle at center, #1a1a1a, #0a0a0a);
+    border-bottom: 1px solid rgba(198, 40, 40, 0.3);
+}
+
+.hero h2 {
+    font-size: 2.3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--text-light);
+}
+
+/* MAIN */
+main {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* GRID CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid rgba(198, 40, 40, 0.2);
+    transition: transform 0.25s, border 0.25s, box-shadow 0.25s;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.card p {
+    color: var(--text-light);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(198, 40, 40, 0.3);
+}
+
+/* SECTION */
+.section {
+    background-color: var(--card);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    border: 1px solid rgba(198, 40, 40, 0.2);
+    box-shadow: 0 0 20px rgba(198, 40, 40, 0.05);
+}
+
+/* FOOTER */
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    margin-top: 3rem;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>WARHAMMER 40,000</h1>
-        <p>In the grim darkness of the far future, there is only war.</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="factions.html">Factions</a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="lore.html">Lore</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <div class="section">
-            <h2>Welcome, Battle-Brother</h2>
-            <p>Explore the factions, legendary heroes, and eternal war of the 41st millennium.</p>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
-    </footer>
+
+<header>
+    <h1>WARHAMMER 40,000</h1>
+    <p>In the grim darkness of the far future, there is only war.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="factions.html">Factions</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>The Galaxy Burns</h2>
+    <p>
+        In the 41st millennium, humanity stands on the brink of extinction. 
+        Beset by alien empires, torn apart by Chaos, and sustained only by war, 
+        the Imperium endures in a universe that knows no peace.
+    </p>
+</section>
+
+<main>
+
+<div class="grid">
+    <a href="factions.html" class="card">
+        <h3>Factions</h3>
+        <p>Explore the Imperium, Chaos, and the many alien races of the galaxy.</p>
+    </a>
+
+    <a href="characters.html" class="card">
+        <h3>Characters</h3>
+        <p>Discover Primarchs, heroes, and legendary warlords.</p>
+    </a>
+
+    <a href="lore.html" class="card">
+        <h3>Lore</h3>
+        <p>Uncover the history and conflicts of the 41st millennium.</p>
+    </a>
+</div>
+
+<div class="section">
+    <h2>Welcome, Battle-Brother</h2>
+    <p>
+        This archive contains knowledge of the Imperium and beyond. 
+        Study well—for ignorance is the first step on the road to heresy.
+    </p>
+</div>
+
+</main>
+
+<footer>
+    <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
+</footer>
+
 </body>
 </html>
