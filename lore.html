@@ -1,169 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lore | Warhammer 40k</title>
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --card: #1a1a1a;
-            --accent: #c62828;
-            --text: #e0e0e0;
-            --text-light: #aaaaaa;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-            border-bottom: 2px solid var(--accent);
-        }
-        header h1 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            color: #c62828;
-            text-shadow: 0 0 20px #c62828;
-        }
-        nav {
-            background-color: rgba(26, 26, 26, 0.98);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--accent);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active { color: var(--accent); }
-        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
-        .section {
-            background-color: var(--card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            border: 1px solid rgba(198, 40, 40, 0.2);
-        }
-        details {
-            margin: 1rem 0;
-            background: #111;
-            padding: 1.2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--accent);
-            font-size: 1.25rem;
-        }
-        p { margin-bottom: 1rem; }
-        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lore | Warhammer 40k</title>
+
+<style>
+:root {
+    --bg:#0a0a0a;
+    --card:#1a1a1a;
+    --accent:#c62828;
+    --text:#e0e0e0;
+    --text-light:#aaaaaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+header{
+    text-align:center;
+    padding:3rem;
+    border-bottom:2px solid var(--accent);
+}
+
+header h1{
+    color:var(--accent);
+    font-size:3rem;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    padding:1rem;
+    border-bottom:1px solid var(--accent);
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+}
+
+nav a.active{color:var(--accent);}
+
+section{
+    padding:2rem;
+}
+
+h2{
+    color:var(--accent);
+    margin-bottom:1rem;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+}
+
+/* CARD */
+.card{
+    background:#111;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    border:1px solid rgba(198,40,40,0.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 12px rgba(198,40,40,0.3);
+}
+
+.card-content{
+    padding:1rem;
+}
+
+.card h3{color:var(--accent);}
+.card p{color:var(--text-light);}
+
+.details{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+    font-size:0.9rem;
+}
+
+.card.active .details{
+    max-height:600px;
+    margin-top:0.5rem;
+}
+
+footer{
+    text-align:center;
+    padding:2rem;
+    color:#666;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>WARHAMMER 40,000</h1>
-        <p>In the grim darkness of the far future, there is only war.</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="factions.html">Factions</a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="lore.html" class="active">Lore</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <div class="section">
-            <h2>The Grimdark Lore of the 41st Millennium</h2>
-            <p>It is the 41st Millennium. For more than a hundred centuries the Emperor has sat immobile on the Golden Throne of Terra. He is the master of mankind by the will of the gods, and master of a million worlds by the might of his inexhaustible armies. He is a rotting carcass writhing invisibly with power from the Dark Age of Technology...</p>
-        </div>
 
-        <div class="section">
-            <h2>Ancient &amp; Major Historical Events</h2>
-            
-            <details open>
-                <summary>The War in Heaven (c. 60 million years ago)</summary>
-                <p>A cataclysmic conflict between the Old Ones and the Necrontyr (who became the Necrons). The Old Ones created the Aeldari and Krork (proto-Orks) as living weapons. The Necrons, allied with the star gods known as the C'tan, nearly wiped out the Old Ones. This war scarred the galaxy and led to the Necrons entering stasis for millions of years.</p>
-            </details>
-            
-            <details open>
-                <summary>The Great Crusade (M30)</summary>
-                <p>The Emperor's campaign to reunite humanity after the Age of Strife. The Primarchs were rediscovered and led their Legions across the stars in the Emperor's name.</p>
-            </details>
-            
-            <details open>
-                <summary>The Horus Heresy (M31)</summary>
-                <p>The greatest betrayal in human history. Warmaster Horus, corrupted by Chaos, turned half the Space Marine Legions against the Emperor. The civil war devastated the Imperium and left the Emperor mortally wounded on the Golden Throne.</p>
-            </details>
-            
-            <details>
-                <summary>The 13th Black Crusade (M41–M42)</summary>
-                <p>Abaddon the Despoiler's greatest campaign. The destruction of Cadia opened the Great Rift, splitting the galaxy in two and allowing Chaos to pour into realspace.</p>
-            </details>
-        </div>
+<header>
+<h1>Warhammer 40,000 Lore</h1>
+</header>
 
-        <div class="section">
-            <h2>Detailed Faction Lore</h2>
-            
-            <details open>
-                <summary>Imperium of Man</summary>
-                <p>The largest empire in the galaxy, ruled in the Emperor's name. It is a brutal, superstitious regime where billions die every day to sustain the Emperor and the war machine. Technology is treated as holy relic. Key events: Horus Heresy, War of the Beast, and the ongoing Indomitus Crusade led by Guilliman.</p>
-            </details>
-            
-            <details open>
-                <summary>Chaos</summary>
-                <p>The eternal enemy. The Chaos Gods (Khorne, Tzeentch, Nurgle, Slaanesh) dwell in the Warp and constantly corrupt mortals. The Horus Heresy was their greatest victory, and the opening of the Great Rift their most recent triumph.</p>
-            </details>
-            
-            <details open>
-                <summary>Orks</summary>
-                <p>Brutal, fungal xenos created as weapons during the War in Heaven. They live only for war. Ghazghkull Mag Uruk Thraka's current massive Waaagh! is one of the greatest threats facing the Imperium in the 41st millennium.</p>
-            </details>
-            
-            <details open>
-                <summary>Aeldari</summary>
-                <p>Ancient psychic race whose empire fell due to hedonism, birthing the Chaos God Slaanesh. Now scattered across Craftworlds, Commorragh (Dark Eldar), and the Ynnari. They fight desperately for survival.</p>
-            </details>
-            
-            <details open>
-                <summary>Tyranids</summary>
-                <p>Extragalactic hive fleets that consume all biomass. The arrival of Hive Fleet Behemoth in 745.M41 marked the beginning of the Tyrannic Wars that continue to ravage the Eastern Fringe.</p>
-            </details>
-            
-            <details open>
-                <summary>Necrons</summary>
-                <p>Ancient robotic dynasty that sacrificed their souls for immortality. They ruled the galaxy 60 million years ago and are now awakening from tomb worlds. The Silent King's return is a major turning point in the current era.</p>
-            </details>
-            
-            <details open>
-                <summary>T'au Empire</summary>
-                <p>A young, optimistic empire guided by the Greater Good. They expand rapidly using advanced technology and diplomacy. Their first major clash with the Imperium was the Damocles Gulf Crusade.</p>
-            </details>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
-    </footer>
+<nav>
+<a href="index.html">Home</a>
+<a href="factions.html">Factions</a>
+<a href="characters.html">Characters</a>
+<a href="lore.html" class="active">Lore</a>
+</nav>
+
+<section>
+<h2>Key Events & Concepts</h2>
+
+<div class="grid">
+
+<!-- GREAT CRUSADE -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Great Crusade</h3>
+<p>Age of Expansion</p>
+<div class="details">
+The Great Crusade was a galaxy-wide campaign led by the Emperor to reunite lost human worlds. With the Primarchs and Space Marine Legions, humanity conquered vast regions of space.
+
+<br><br>
+It was an age of hope, reason, and technological advancement—before everything fell apart.
+</div>
+</div>
+</div>
+
+<!-- HORUS HERESY -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Horus Heresy</h3>
+<p>Galaxy-Shattering Civil War</p>
+<div class="details">
+Horus, the Emperor’s favoured son, turned to Chaos and led half the Space Marine Legions in rebellion.
+
+<br><br>
+The war nearly destroyed humanity. It ended with Horus’ death and the Emperor being mortally wounded and placed on the Golden Throne.
+</div>
+</div>
+</div>
+
+<!-- GOLDEN THRONE -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Golden Throne</h3>
+<p>Life Support of the Emperor</p>
+<div class="details">
+The Golden Throne keeps the Emperor alive and allows him to guide humanity through the Warp.
+
+<br><br>
+It also powers the Astronomican, a psychic beacon that enables faster-than-light travel.
+</div>
+</div>
+</div>
+
+<!-- IMPERIUM TODAY -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Imperium Today</h3>
+<p>Endless War</p>
+<div class="details">
+Ten thousand years after the Heresy, the Imperium is a decaying empire locked in constant war.
+
+<br><br>
+Technology is barely understood, religion dominates society, and survival comes at an immense cost.
+</div>
+</div>
+</div>
+
+<!-- CHAOS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Warp & Chaos</h3>
+<p>Realm of Madness</p>
+<div class="details">
+The Warp is a parallel dimension of pure emotion and psychic energy.
+
+<br><br>
+From it come the Chaos Gods—Khorne, Tzeentch, Nurgle, and Slaanesh—who manipulate reality and corrupt mortals.
+</div>
+</div>
+</div>
+
+<!-- PRIMARCHS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Primarchs</h3>
+<p>Demigod Generals</p>
+<div class="details">
+The Primarchs are the Emperor’s sons, each created to lead a Space Marine Legion.
+
+<br><br>
+Some remained loyal, while others betrayed humanity and became Daemon Princes.
+</div>
+</div>
+</div>
+
+<!-- XENOS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Xenos Threat</h3>
+<p>Aliens Everywhere</p>
+<div class="details">
+Humanity faces countless alien threats including Orks, Tyranids, Necrons, and Aeldari.
+
+<br><br>
+Each poses a unique danger, from endless war to total biological extinction.
+</div>
+</div>
+</div>
+
+<!-- DARK IMPERIUM -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>The Great Rift</h3>
+<p>Galaxy Split in Two</p>
+<div class="details">
+A massive warp storm tore the galaxy in half, creating Imperium Nihilus—cut off from the Emperor’s light.
+
+<br><br>
+This event plunged humanity into its darkest age yet.
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
+</footer>
+
 </body>
 </html>
