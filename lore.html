@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore | Warhammer 40k</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1a1a1a;
+            --accent: #c62828;
+            --text: #e0e0e0;
+            --text-light: #aaaaaa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #c62828;
+            text-shadow: 0 0 20px #c62828;
+        }
+        nav {
+            background-color: rgba(26, 26, 26, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--accent);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active { color: var(--accent); }
+        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
+        .section {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(198, 40, 40, 0.2);
+        }
+        details {
+            margin: 1rem 0;
+            background: #111;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        p { margin-bottom: 1rem; }
+        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WARHAMMER 40,000</h1>
+        <p>In the grim darkness of the far future, there is only war.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="factions.html">Factions</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="lore.html" class="active">Lore</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="section">
+            <h2>The Grimdark Lore of the 41st Millennium</h2>
+            <p>It is the 41st Millennium. For more than a hundred centuries the Emperor has sat immobile on the Golden Throne of Terra. He is the master of mankind by the will of the gods, and master of a million worlds by the might of his inexhaustible armies.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Historical Events</h2>
+            <details>
+                <summary>The Horus Heresy</summary>
+                <p>The great betrayal. Half the Space Marine Legions turned to Chaos under Warmaster Horus. A civil war that nearly destroyed the Imperium. The Emperor was mortally wounded and placed on the Golden Throne.</p>
+            </details>
+            
+            <details>
+                <summary>The Great Crusade</summary>
+                <p>The Emperor's campaign to reunite humanity after the Age of Strife. The Primarchs were created and led the Legions to conquer the galaxy.</p>
+            </details>
+            
+            <details>
+                <summary>The War of the Beast</summary>
+                <p>Orks nearly destroyed the Imperium after the Heresy. The Beast was one of the greatest Ork threats in history.</p>
+            </details>
+            
+            <details>
+                <summary>The 13th Black Crusade</summary>
+                <p>Abaddon’s latest and most successful invasion of Cadia, which led to the opening of the Great Rift (Cicatrix Maledictum).</p>
+            </details>
+        </div>
+
+        <div class="section">
+            <h2>Faction Lore Highlights</h2>
+            
+            <details>
+                <summary>Imperium of Man</summary>
+                <p>A decaying, theocratic empire of a million worlds. Humanity clings to survival through faith, ignorance, and endless war. Technology is revered as holy and innovation is often heresy.</p>
+            </details>
+            
+            <details>
+                <summary>Chaos</summary>
+                <p>The realm of the Chaos Gods exists in the Warp. They constantly corrupt mortals and seek to consume realspace. The Great Rift has split the galaxy in two.</p>
+            </details>
+            
+            <details>
+                <summary>Orks</summary>
+                <p>Created as a warrior race by the Old Ones. They grow stronger through fighting. Their psychic "Waaagh!" energy makes their ramshackle technology work.</p>
+            </details>
+            
+            <details>
+                <summary>Aeldari</summary>
+                <p>Once ruled the galaxy but fell due to hedonism that birthed Slaanesh. Now scattered: Craftworlds, Commorragh raiders, and Harlequins.</p>
+            </details>
+            
+            <details>
+                <summary>Tyranids</summary>
+                <p>Hive fleets from another galaxy. They consume all biomass to create more Tyranid organisms. The Shadow in the Warp disrupts psykers.</p>
+            </details>
+            
+            <details>
+                <summary>Necrons</summary>
+                <p>Ancient race that gave up their souls for immortality in metal bodies. Now awakening from 60 million years of slumber to reclaim the galaxy.</p>
+            </details>
+            
+            <details>
+                <summary>T'au Empire</summary>
+                <p>A young, optimistic empire that believes in the Greater Good. They expand rapidly using advanced technology and diplomacy.</p>
+            </details>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
+    </footer>
+</body>
+</html>
