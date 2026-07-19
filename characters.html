@@ -1,118 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Characters | Warhammer 40k</title>
-
-<style>
-:root {
-    --bg:#0a0a0a;
-    --card:#1a1a1a;
-    --accent:#c62828;
-    --text:#e0e0e0;
-    --text-light:#aaaaaa;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-    font-family:Segoe UI, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-}
-
-header{
-    text-align:center;
-    padding:3rem;
-    border-bottom:2px solid var(--accent);
-}
-
-header h1{
-    color:var(--accent);
-    font-size:3rem;
-}
-
-nav{
-    display:flex;
-    justify-content:center;
-    gap:2rem;
-    padding:1rem;
-    border-bottom:1px solid var(--accent);
-}
-
-nav a{
-    color:var(--text);
-    text-decoration:none;
-}
-
-nav a.active{color:var(--accent);}
-
-section{
-    padding:2rem;
-}
-
-h2{
-    color:var(--accent);
-    margin-bottom:1rem;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:1.5rem;
-}
-
-/* CARD */
-.card{
-    background:#111;
-    border-radius:10px;
-    overflow:hidden;
-    cursor:pointer;
-    border:1px solid rgba(198,40,40,0.2);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 12px rgba(198,40,40,0.3);
-}
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:1rem;
-}
-
-.card h3{color:var(--accent);}
-.card p{color:var(--text-light);}
-
-.details{
-    max-height:0;
-    overflow:hidden;
-    transition:.3s;
-    font-size:0.9rem;
-}
-
-.card.active .details{
-    max-height:300px;
-    margin-top:0.5rem;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:2rem;
-    color:#666;
-}
-</style>
-</head>
-
+<!-- Only showing BODY content changes for clarity -->
 <body>
 
 <header>
@@ -131,13 +17,14 @@ footer{
 <h2>Primarchs</h2>
 <div class="grid">
 
-<!-- LOYALISTS -->
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/guilliman.jpg">
 <div class="card-content">
 <h3>Roboute Guilliman</h3>
 <p>Ultramarines</p>
-<div class="details">Lord Commander of the Imperium, revived to lead humanity.</div>
+<div class="details">
+Revived in the 41st millennium, Guilliman now rules as Lord Commander of the Imperium. A master of logistics and strategy, he struggles to hold together a decaying empire built on faith rather than reason.
+</div>
 </div>
 </div>
 
@@ -145,56 +32,72 @@ footer{
 <img src="images/lion.jpg">
 <h3>Lion El'Jonson</h3>
 <p>Dark Angels</p>
-<div class="details">Recently returned Primarch, hunting Chaos.</div>
+<div class="details">
+Recently awakened after ten thousand years, the Lion has returned as a relentless hunter of Chaos, leading secretive campaigns across the Imperium Nihilus.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/russ.jpg">
 <h3>Leman Russ</h3>
 <p>Space Wolves</p>
-<div class="details">Vanished into the Eye of Terror.</div>
+<div class="details">
+The savage king of Fenris disappeared into the Eye of Terror, seeking a way to save the Emperor. Legends say he will return in the Imperium’s darkest hour.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/dorn.jpg">
 <h3>Rogal Dorn</h3>
 <p>Imperial Fists</p>
-<div class="details">Master of fortification, fate unknown.</div>
+<div class="details">
+The Emperor’s praetorian and master of defence, Dorn vanished after the Heresy, leaving behind only his hand as proof of his fate.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/sanguinius.jpg">
 <h3>Sanguinius</h3>
 <p>Blood Angels</p>
-<div class="details">Slain by Horus, greatest martyr of the Imperium.</div>
+<div class="details">
+Beloved angelic Primarch who foresaw his own death. He faced Horus alone during the Siege of Terra and was slain, becoming a symbol of sacrifice.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/vulkan.jpg">
 <h3>Vulkan</h3>
 <p>Salamanders</p>
-<div class="details">Immortal Perpetual, protector of humanity.</div>
+<div class="details">
+A perpetual who cannot truly die, Vulkan values humanity above all. He vanished after the Heresy but is destined to return when his artefacts are found.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/corax.jpg">
 <h3>Corvus Corax</h3>
 <p>Raven Guard</p>
-<div class="details">Warp-altered hunter of Chaos.</div>
+<div class="details">
+After the Heresy, Corax entered the Warp and became a shadow-like being, hunting traitors in the darkness.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/khan.jpg">
 <h3>Jaghatai Khan</h3>
 <p>White Scars</p>
-<div class="details">Lost in the Webway.</div>
+<div class="details">
+The master of speed and hit-and-run warfare vanished into the Webway while chasing Dark Eldar raiders.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/ferrus.jpg">
 <h3>Ferrus Manus</h3>
 <p>Iron Hands</p>
-<div class="details">Killed by Fulgrim.</div>
+<div class="details">
+Killed by Fulgrim early in the Heresy, Ferrus Manus’ death hardened his Legion into cold, machine-obsessed warriors.
+</div>
 </div>
 
 <!-- TRAITORS -->
@@ -203,185 +106,121 @@ footer{
 <img src="images/horus.jpg">
 <h3>Horus</h3>
 <p>Warmaster</p>
-<div class="details">Leader of the Horus Heresy.</div>
+<div class="details">
+The Emperor’s favoured son turned traitor, Horus led a galaxy-wide rebellion before being slain by the Emperor aboard his flagship.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/fulgrim.jpg">
 <h3>Fulgrim</h3>
 <p>Slaanesh</p>
-<div class="details">Daemon Primarch of excess.</div>
+<div class="details">
+Obsessed with perfection, Fulgrim fell to Slaanesh and became a Daemon Primarch embodying excess and corruption.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/perturabo.jpg">
 <h3>Perturabo</h3>
 <p>Iron Warriors</p>
-<div class="details">Siege master turned Daemon Prince.</div>
+<div class="details">
+A bitter genius of siege warfare, Perturabo turned against the Emperor and now rules as a Daemon Prince of Chaos.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/angron.jpg">
 <h3>Angron</h3>
 <p>Khorne</p>
-<div class="details">Embodiment of rage.</div>
+<div class="details">
+Driven mad by the Butcher’s Nails, Angron became a Daemon Primarch of Khorne, living only for rage and slaughter.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/mortarion.jpg">
 <h3>Mortarion</h3>
 <p>Nurgle</p>
-<div class="details">Daemon Primarch of decay.</div>
+<div class="details">
+Enduring endless suffering, Mortarion embraced Nurgle to save his Legion, becoming a plague-ridden Daemon Primarch.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/magnus.jpg">
 <h3>Magnus the Red</h3>
 <p>Tzeentch</p>
-<div class="details">Master sorcerer turned daemon.</div>
+<div class="details">
+A tragic figure, Magnus’ attempt to warn the Emperor led to his fall. He now serves Tzeentch as a master of sorcery.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/curze.jpg">
 <h3>Konrad Curze</h3>
 <p>Night Lords</p>
-<div class="details">Assassinated terror-primarch.</div>
+<div class="details">
+Haunted by visions of the future, Curze embraced terror as justice and ultimately allowed himself to be assassinated.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/lorgar.jpg">
 <h3>Lorgar</h3>
 <p>Word Bearers</p>
-<div class="details">First to worship Chaos.</div>
+<div class="details">
+The first to worship Chaos, Lorgar’s religious zeal helped ignite the Horus Heresy.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
 <img src="images/alpharius.jpg">
 <h3>Alpharius / Omegon</h3>
 <p>Alpha Legion</p>
-<div class="details">Twin primarchs of deception.</div>
+<div class="details">
+Twin Primarchs of secrecy and deception. Their true loyalties and fate remain one of the galaxy’s greatest mysteries.
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- ================= IMPERIUM ================= -->
+<!-- ================= CHAOS GODS ================= -->
 <section>
-<h2>Imperium of Man</h2>
+<h2>Chaos Gods</h2>
 <div class="grid">
 
 <div class="card" onclick="this.classList.toggle('active')">
-<img src="images/emperor.jpg">
-<h3>Emperor of Mankind</h3>
-<p>God-Emperor</p>
-<div class="details">Ruler of humanity bound to the Golden Throne.</div>
+<h3>Khorne</h3>
+<p>God of War</p>
+<div class="details">
+Khorne is the Chaos God of rage, war, and bloodshed. He cares not from where the blood flows, only that it does.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
-<img src="images/malcador.jpg">
-<h3>Malcador</h3>
-<p>Sigillite</p>
-<div class="details">The Emperor’s closest advisor.</div>
+<h3>Tzeentch</h3>
+<p>God of Change</p>
+<div class="details">
+Master of fate, magic, and manipulation, Tzeentch weaves endless schemes across time.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
-<img src="images/cawl.jpg">
-<h3>Belisarius Cawl</h3>
-<p>Mechanicus</p>
-<div class="details">Creator of Primaris Marines.</div>
+<h3>Nurgle</h3>
+<p>God of Decay</p>
+<div class="details">
+The Plague God embodies disease and entropy, yet also twisted forms of resilience and rebirth.
+</div>
 </div>
 
 <div class="card" onclick="this.classList.toggle('active')">
-<img src="images/calgar.jpg">
-<h3>Marneus Calgar</h3>
-<p>Ultramarines</p>
-<div class="details">Legendary Chapter Master.</div>
+<h3>Slaanesh</h3>
+<p>God of Excess</p>
+<div class="details">
+Slaanesh represents pleasure, obsession, and excess in all forms, corrupting those who seek perfection.
 </div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/dante.jpg">
-<h3>Dante</h3>
-<p>Blood Angels</p>
-<div class="details">Oldest living Space Marine.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/eisenhorn.jpg">
-<h3>Gregor Eisenhorn</h3>
-<p>Inquisition</p>
-<div class="details">Radical inquisitor.</div>
-</div>
-
-</div>
-</section>
-
-<!-- ================= CHAOS ================= -->
-<section>
-<h2>Chaos</h2>
-<div class="grid">
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/abaddon.jpg">
-<h3>Abaddon</h3>
-<p>Black Legion</p>
-<div class="details">Warmaster of Chaos.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/kharn.jpg">
-<h3>Khârn</h3>
-<p>Khorne</p>
-<div class="details">The Betrayer.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/ahriman.jpg">
-<h3>Ahriman</h3>
-<p>Thousand Sons</p>
-<div class="details">Seeker of forbidden knowledge.</div>
-</div>
-
-</div>
-</section>
-
-<!-- ================= XENOS ================= -->
-<section>
-<h2>Xenos</h2>
-<div class="grid">
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/ghazghkull.jpg">
-<h3>Ghazghkull Thraka</h3>
-<p>Orks</p>
-<div class="details">Greatest Ork warboss.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/silentking.jpg">
-<h3>Silent King</h3>
-<p>Necrons</p>
-<div class="details">Supreme ruler returned.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/trazyn.jpg">
-<h3>Trazyn</h3>
-<p>Necrons</p>
-<div class="details">Collector of history.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/vect.jpg">
-<h3>Asdrubael Vect</h3>
-<p>Drukhari</p>
-<div class="details">Master of Commorragh.</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('active')">
-<img src="images/shadowsun.jpg">
-<h3>Shadowsun</h3>
-<p>T’au</p>
-<div class="details">Supreme commander.</div>
 </div>
 
 </div>
@@ -392,4 +231,3 @@ footer{
 </footer>
 
 </body>
-</html>
