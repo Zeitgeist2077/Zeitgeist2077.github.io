@@ -3,129 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeitgeist WarHammer</title>
+    <title>Warhammer 40k Archive</title>
     <style>
         :root {
-            --bg: #0f0f0f;
+            --bg: #0a0a0a;
             --card: #1a1a1a;
-            --accent: #00ff9d;
+            --accent: #c62828;
             --text: #e0e0e0;
             --text-light: #aaaaaa;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
         }
-        
         header {
-            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
             padding: 4rem 2rem 3rem;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+            border-bottom: 2px solid var(--accent);
         }
-        
         header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #00ff9d, #00cc7a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #c62828;
+            text-shadow: 0 0 20px #c62828;
         }
-        
         nav {
-            background-color: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(26, 26, 26, 0.98);
             position: sticky;
             top: 0;
             z-index: 100;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
+            border-bottom: 1px solid var(--accent);
         }
-        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 3rem;
         }
-        
         nav a {
             color: var(--text);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            transition: color 0.3s;
         }
-        
-        nav a:hover {
-            color: var(--accent);
-        }
-        
-        main {
-            max-width: 1000px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-        
+        nav a:hover, nav a.active { color: var(--accent); }
+        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
         .section {
             background-color: var(--card);
-            border-radius: 16px;
-            padding: 3rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             margin-bottom: 3rem;
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(198, 40, 40, 0.2);
         }
-        
-        h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--accent); }
-        
-        footer {
-            background-color: #0a0a0a;
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(0, 255, 157, 0.1);
+        details {
+            margin: 1rem 0;
+            background: #111;
+            padding: 1rem;
+            border-radius: 8px;
         }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--accent);
+        }
+        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Zeitgeist<span style="color:#00ff9d">.</span></h1>
-        <p>Modern • Minimal • Powerful</p>
+        <h1>WARHAMMER 40,000</h1>
+        <p>In the grim darkness of the far future, there is only war.</p>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="factions.html">Factions</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="lore.html">Lore</a></li>
         </ul>
     </nav>
     
     <main>
         <div class="section">
-            <h2>Welcome to the Future</h2>
-            <p>This sleek dark-themed website was built with clean code and modern aesthetics. Perfect for portfolios, startups, or personal brands.</p>
-        </div>
-        
-        <div class="section">
-            <h2>Why This Design?</h2>
-            <ul>
-                <li>Deep dark mode with neon accents</li>
-                <li>Smooth hover animations</li>
-                <li>Fully responsive on all devices</li>
-                <li>Glassmorphic navigation</li>
-                <li>Easy to customize and expand</li>
-            </ul>
+            <h2>Welcome, Battle-Brother</h2>
+            <p>Explore the factions, legendary heroes, and eternal war of the 41st millennium.</p>
         </div>
     </main>
     
     <footer>
-        <p>&copy; 2026 Zeitgeist</p>
+        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
     </footer>
 </body>
 </html>
