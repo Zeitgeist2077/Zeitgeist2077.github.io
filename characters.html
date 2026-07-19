@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legendary Characters | Warhammer 40k</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1a1a1a;
+            --accent: #c62828;
+            --text: #e0e0e0;
+            --text-light: #aaaaaa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #c62828;
+            text-shadow: 0 0 20px #c62828;
+        }
+        nav {
+            background-color: rgba(26, 26, 26, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--accent);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active { color: var(--accent); }
+        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
+        .section {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(198, 40, 40, 0.2);
+        }
+        details {
+            margin: 1rem 0;
+            background: #111;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WARHAMMER 40,000</h1>
+        <p>In the grim darkness of the far future, there is only war.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="factions.html">Factions</a></li>
+            <li><a href="characters.html" class="active">Characters</a></li>
+            <li><a href="lore.html">Lore</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="section">
+            <h2>The Primarchs</h2>
+            <details open>
+                <summary>Loyalist Primarchs</summary>
+                <ul>
+                    <li><strong>Roboute Guilliman</strong> – Ultramarines, Lord Commander of the Imperium (returned).</li>
+                    <li><strong>Lion El'Jonson</strong> – Dark Angels, recently awakened.</li>
+                    <li><strong>Jaghatai Khan</strong> – White Scars, lost in the Webway.</li>
+                    <li><strong>Leman Russ</strong> – Space Wolves, disappeared after the Heresy.</li>
+                    <li><strong>Rogal Dorn</strong> – Imperial Fists, presumed dead defending Terra.</li>
+                    <li><strong>Sanguinius</strong> – Blood Angels, slain by Horus (legendary martyr).</li>
+                    <li><strong>Ferrus Manus</strong> – Iron Hands, killed by Fulgrim.</li>
+                    <li><strong>Vulkan</strong> – Salamanders, believed to be immortal.</li>
+                    <li><strong>Corvus Corax</strong> – Raven Guard, transformed into a shadow creature.</li>
+                </ul>
+            </details>
+            
+            <details open>
+                <summary>Traitor Primarchs (Daemon Princes)</summary>
+                <ul>
+                    <li><strong>Horus Lupercal</strong> – Warmaster, slain by the Emperor.</li>
+                    <li><strong>Fulgrim</strong> – Emperor's Children, Daemon Prince of Slaanesh.</li>
+                    <li><strong>Perturabo</strong> – Iron Warriors, Daemon Prince of Chaos Undivided.</li>
+                    <li><strong>Angron</strong> – World Eaters, Daemon Prince of Khorne.</li>
+                    <li><strong>Mortarion</strong> – Death Guard, Daemon Prince of Nurgle.</li>
+                    <li><strong>Magnus the Red</strong> – Thousand Sons, Daemon Prince of Tzeentch.</li>
+                    <li><strong>Konrad Curze (Night Haunter)</strong> – Night Lords, assassinated.</li>
+                    <li><strong>Lorgar Aurelian</strong> – Word Bearers, Daemon Prince.</li>
+                    <li><strong>Alpharius Omegon</strong> – Alpha Legion, status unknown (twin primarchs).</li>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>Other Legendary Characters</summary>
+                <ul>
+                    <li><strong>Abaddon the Despoiler</strong> – Current Warmaster of Chaos.</li>
+                    <li><strong>Marneus Calgar</strong> – Chapter Master of the Ultramarines.</li>
+                    <li><strong>Dante</strong> – Chapter Master of the Blood Angels.</li>
+                    <li><strong>Saint Celestine</strong> – Living Saint of the Adepta Sororitas.</li>
+                    <li><strong>Szarek the Silent King</strong> – Ruler of the Necrons.</li>
+                    <li><strong>The Swarmlord</strong> – Apex Tyranid warrior.</li>
+                </ul>
+            </details>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
+    </footer>
+</body>
+</html>
