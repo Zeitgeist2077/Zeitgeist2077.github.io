@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sleek Website</title>
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --accent: #00ff9d;
+            --text: #e0e0e0;
+            --text-light: #aaaaaa;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00ff9d, #00cc7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--accent); }
+        
+        footer {
+            background-color: #0a0a0a;
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SLEEK<span style="color:#00ff9d">.</span></h1>
+        <p>Modern • Minimal • Powerful</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="section">
+            <h2>Welcome to the Future</h2>
+            <p>This sleek dark-themed website was built with clean code and modern aesthetics. Perfect for portfolios, startups, or personal brands.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Why This Design?</h2>
+            <ul>
+                <li>Deep dark mode with neon accents</li>
+                <li>Smooth hover animations</li>
+                <li>Fully responsive on all devices</li>
+                <li>Glassmorphic navigation</li>
+                <li>Easy to customize and expand</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Your Name • Built with ❤️ and GitHub Pages</p>
+    </footer>
+</body>
+</html>
