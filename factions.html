@@ -1,181 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factions | Warhammer 40k</title>
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --card: #1a1a1a;
-            --accent: #c62828;
-            --text: #e0e0e0;
-            --text-light: #aaaaaa;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-            border-bottom: 2px solid var(--accent);
-        }
-        header h1 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            color: #c62828;
-            text-shadow: 0 0 20px #c62828;
-        }
-        nav {
-            background-color: rgba(26, 26, 26, 0.98);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--accent);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active { color: var(--accent); }
-        main { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
-        .section {
-            background-color: var(--card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            border: 1px solid rgba(198, 40, 40, 0.2);
-        }
-        details {
-            margin: 1rem 0;
-            background: #111;
-            padding: 1.2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--accent);
-            font-size: 1.25rem;
-        }
-        ul { padding-left: 1.5rem; margin-top: 0.5rem; }
-        footer { background: #050505; text-align: center; padding: 2rem; color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factions | Warhammer 40k</title>
+
+<style>
+:root {
+    --bg:#0a0a0a;
+    --card:#1a1a1a;
+    --accent:#c62828;
+    --text:#e0e0e0;
+    --text-light:#aaaaaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+header{
+    text-align:center;
+    padding:3rem;
+    border-bottom:2px solid var(--accent);
+}
+
+header h1{
+    color:var(--accent);
+    font-size:3rem;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    padding:1rem;
+    border-bottom:1px solid var(--accent);
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+}
+
+nav a.active{color:var(--accent);}
+
+section{
+    padding:2rem;
+}
+
+h2{
+    color:var(--accent);
+    margin-bottom:1rem;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+}
+
+/* CARD */
+.card{
+    background:#111;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    border:1px solid rgba(198,40,40,0.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 12px rgba(198,40,40,0.3);
+}
+
+.card-content{
+    padding:1rem;
+}
+
+.card h3{color:var(--accent);}
+.card p{color:var(--text-light);}
+
+.details{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+    font-size:0.9rem;
+}
+
+.card.active .details{
+    max-height:600px;
+    margin-top:0.5rem;
+}
+
+footer{
+    text-align:center;
+    padding:2rem;
+    color:#666;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>WARHAMMER 40,000</h1>
-        <p>In the grim darkness of the far future, there is only war.</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="factions.html" class="active">Factions</a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="lore.html">Lore</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <div class="section">
-            <h2>All Major Factions of the 41st Millennium</h2>
-            
-            <details open>
-                <summary>Imperium of Man</summary>
-                <p>The vast, decaying human empire ruled by the God-Emperor.</p>
-                <ul>
-                    <li>Adeptus Astartes (Space Marines)</li>
-                    <li>Adeptus Mechanicus</li>
-                    <li>Astra Militarum (Imperial Guard)</li>
-                    <li>Adepta Sororitas (Sisters of Battle)</li>
-                    <li>Inquisition</li>
-                    <li>Imperial Navy</li>
-                </ul>
-            </details>
-            
-            <details open>
-                <summary>Adeptus Astartes - Space Marine Chapters</summary>
-                <p>The Emperor's finest superhuman warriors.</p>
-                <ul>
-                    <li><strong>Ultramarines</strong> - Codex-compliant, disciplined leaders.</li>
-                    <li><strong>Dark Angels</strong> - Mysterious, hunt traitors and the Fallen.</li>
-                    <li><strong>Blood Angels</strong> - Artistic but plagued by the Black Rage.</li>
-                    <li><strong>Space Wolves</strong> - Savage, anti-authority Fenrisian warriors.</li>
-                    <li><strong>Imperial Fists</strong> - Unyielding siege masters.</li>
-                    <li><strong>White Scars</strong> - Lightning-fast bike and speed warfare.</li>
-                    <li><strong>Raven Guard</strong> - Stealth, ambush, and guerrilla tactics.</li>
-                    <li><strong>Salamanders</strong> - Humanitarian flame experts from Nocturne.</li>
-                    <li><strong>Iron Hands</strong> - Cybernetically augmented, emotionless.</li>
-                    <li><strong>Black Templars</strong> - Fanatical crusading chapter.</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Chaos</summary>
-                <p>Corrupted forces serving the Chaos Gods.</p>
-                <ul>
-                    <li>Chaos Space Marines (Black Legion, World Eaters, etc.)</li>
-                    <li>Daemons of Khorne, Tzeentch, Nurgle, Slaanesh</li>
-                    <li>Chaos Cults and Renegades</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Orks</summary>
-                <p>Warlike, fungal xenos who live only for battle and "Waaagh!"</p>
-            </details>
-            
-            <details>
-                <summary>Aeldari (Eldar)</summary>
-                <p>Ancient, psychic survivors of a fallen empire.</p>
-                <ul>
-                    <li>Craftworld Aeldari</li>
-                    <li>Drukhari (Dark Eldar) - Sadistic raiders of Commorragh</li>
-                    <li>Harlequins</li>
-                    <li>Ynnari (Followers of Ynnead)</li>
-                </ul>
-            </details>
-            
-            <details>
-                <summary>Tyranids</summary>
-                <p>Extragalactic hive-mind swarm that consumes all biomass.</p>
-            </details>
-            
-            <details>
-                <summary>Necrons</summary>
-                <p>Ancient undying robotic race awakening from tomb worlds.</p>
-            </details>
-            
-            <details>
-                <summary>T'au Empire</summary>
-                <p>Young, expansionist empire guided by the Greater Good.</p>
-            </details>
-            
-            <details>
-                <summary>Leagues of Votann (Squats / Kin)</summary>
-                <p>Cloned, high-tech dwarf-like prospectors.</p>
-            </details>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
-    </footer>
+
+<header>
+<h1>Factions of the 41st Millennium</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="factions.html" class="active">Factions</a>
+<a href="characters.html">Characters</a>
+<a href="lore.html">Lore</a>
+</nav>
+
+<section>
+<h2>Major Factions</h2>
+
+<div class="grid">
+
+<!-- IMPERIUM -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Imperium of Man</h3>
+<p>Human Empire</p>
+<div class="details">
+The Imperium is a galaxy-spanning empire of humanity, ruled by the immortal God-Emperor from the Golden Throne. It is vast beyond comprehension, containing millions of worlds, yet it is crumbling under its own weight. Constant war, corruption, and religious fanaticism define daily life.
+
+<br><br>
+Despite its technological stagnation, the Imperium survives through sheer scale, faith, and sacrifice. Billions die every day to hold the line against alien threats and the horrors of Chaos.
+
+<br><br>
+<strong>Sub-factions:</strong>
+<ul>
+<li><strong>Adeptus Astartes</strong> – Genetically engineered super-soldiers created from the Primarchs.</li>
+<li><strong>Adeptus Mechanicus</strong> – Tech-priests who worship the Machine God and preserve ancient technology.</li>
+<li><strong>Astra Militarum</strong> – The Imperial Guard, vast armies of ordinary humans.</li>
+<li><strong>Adepta Sororitas</strong> – Fanatical warrior nuns devoted to the Emperor.</li>
+<li><strong>Inquisition</strong> – Secret police rooting out heresy, aliens, and corruption.</li>
+<li><strong>Imperial Navy</strong> – Controls space warfare and fleet combat.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- SPACE MARINES -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Space Marine Chapters</h3>
+<p>Genetically Enhanced Warriors</p>
+<div class="details">
+The Adeptus Astartes are humanity’s ultimate warriors, created using the genetic material of the Primarchs. Each chapter has its own traditions, culture, and combat doctrine.
+
+<br><br>
+Though they number only around a million in total, their impact on the battlefield is unmatched. They act as shock troops, heroes, and living legends.
+
+<br><br>
+<strong>Notable Chapters:</strong>
+<ul>
+<li><strong>Ultramarines</strong> – Masters of discipline and strategy.</li>
+<li><strong>Dark Angels</strong> – Secretive hunters of the Fallen.</li>
+<li><strong>Blood Angels</strong> – Noble but cursed by genetic flaws.</li>
+<li><strong>Space Wolves</strong> – Savage warriors from Fenris.</li>
+<li><strong>Imperial Fists</strong> – Masters of defence and siege warfare.</li>
+<li><strong>White Scars</strong> – Lightning-fast hit-and-run fighters.</li>
+<li><strong>Raven Guard</strong> – Experts in stealth and ambush.</li>
+<li><strong>Salamanders</strong> – Protectors of humanity.</li>
+<li><strong>Iron Hands</strong> – Obsessed with cybernetic perfection.</li>
+<li><strong>Black Templars</strong> – Zealous crusaders.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- CHAOS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Chaos</h3>
+<p>Forces of the Warp</p>
+<div class="details">
+Chaos is the manifestation of emotion and corruption within the Warp. It is ruled by four dark gods who feed on mortal souls and ambition.
+
+<br><br>
+The forces of Chaos include traitor Space Marines, daemons, and cultists. Their goal is the destruction or domination of reality itself.
+
+<br><br>
+<strong>Major elements:</strong>
+<ul>
+<li>Chaos Space Marines (Black Legion, World Eaters, Death Guard, Thousand Sons)</li>
+<li>Daemons of the four Chaos Gods</li>
+<li>Cultists and traitor armies</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ORKS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Orks</h3>
+<p>Waaagh!</p>
+<div class="details">
+Orks are a brutal, fungal species that live only for war. Their society is driven by strength, and the biggest Ork becomes the boss.
+
+<br><br>
+They possess a strange psychic field that makes their belief shape reality—red vehicles go faster simply because Orks believe it.
+
+<br><br>
+When enough Orks gather, they form a massive war crusade known as a Waaagh!, capable of devastating entire sectors.
+</div>
+</div>
+</div>
+
+<!-- AELDARI -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Aeldari</h3>
+<p>Ancient Psychic Race</p>
+<div class="details">
+Once the dominant species in the galaxy, the Aeldari fell into decadence, accidentally creating the Chaos God Slaanesh.
+
+<br><br>
+Now scattered and dwindling, they fight to survive extinction.
+
+<ul>
+<li><strong>Craftworld Aeldari</strong> – Disciplined survivors living on massive ships.</li>
+<li><strong>Drukhari</strong> – Cruel raiders who feed on suffering.</li>
+<li><strong>Harlequins</strong> – Mysterious performers serving the Laughing God.</li>
+<li><strong>Ynnari</strong> – Followers of the god of the dead, seeking salvation.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- TYRANIDS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Tyranids</h3>
+<p>Hive Mind Swarm</p>
+<div class="details">
+The Tyranids are an extragalactic species controlled by a single Hive Mind. They consume all biological matter to fuel their endless evolution.
+
+<br><br>
+Entire planets are stripped bare, leaving nothing but lifeless rock.
+
+<br><br>
+Each invasion is led by evolving bioforms like the Swarmlord.
+</div>
+</div>
+</div>
+
+<!-- NECRONS -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Necrons</h3>
+<p>Ancient Machines</p>
+<div class="details">
+Once a dying organic race, the Necrons transferred their consciousness into immortal metal bodies.
+
+<br><br>
+Now awakening after millions of years, they seek to reclaim the galaxy they once ruled.
+
+<br><br>
+Their technology is far beyond anything humanity possesses.
+</div>
+</div>
+</div>
+
+<!-- TAU -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>T’au Empire</h3>
+<p>The Greater Good</p>
+<div class="details">
+A young and rapidly expanding empire, the T’au believe in unity and cooperation under the philosophy of the Greater Good.
+
+<br><br>
+They rely heavily on advanced technology, drones, and ranged combat instead of brute strength.
+</div>
+</div>
+</div>
+
+<!-- VOTANN -->
+<div class="card" onclick="this.classList.toggle('active')">
+<div class="card-content">
+<h3>Leagues of Votann</h3>
+<p>Kin</p>
+<div class="details">
+Descended from ancient human colonists, the Kin are clone-based and guided by ancient AI known as Votann.
+
+<br><br>
+They are master craftsmen, miners, and warriors with extremely advanced technology and strong traditions.
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>&copy; Fan Site • For the Emperor • Not official Games Workshop content</p>
+</footer>
+
 </body>
 </html>
